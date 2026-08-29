@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lucky Spin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    
+
+
+    <!-- Spin Board CSS & JS -->
+    <link rel="stylesheet" href="/css/spinBoard/style.css" />
+    <script type="text/javascript" src="/js/spinBoard/Winwheel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+
+    
+<div align="center" class="flexbkg">
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
+        <div role="main" class="inner cover" style="zoom: 0.8;">
+            <section class="sec-header">
+                <div class="container">
+                    <div class="branding mx-auto">
+                        <img src="https://www.kuat-cuci.com/images/spinboard/kcspin.gif" />
+                    </div>
+                    <div class="signboard mx-auto">
+                        <img src="/images/spinBoard/signboard.png" />
+                    </div>
+            </section>
+            <div class="wheelbkg">
+                <div class="wheelpointer"><img src="/images/spinBoard/pin.png" /></div>
+                <div class="spinbrand"><img src="/images/spinBoard/imgspinbrand.png" /></div>
+                <canvas id="canvas" width="380" height="380">
+                    <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                </canvas>
+                <a href="#" id="spinbutton" class="active animate__animated animate__pulse animate__infinite"></a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <section class="howtoplay">
+        <div class="container">
+            <h2 class="mb-3">How to Play</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="infoframe">
+                        <img src="/images/spinBoard/step-01.png" />
+                        <h4>01 Get Code</h4>
+                        <p>Request code from CS</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="infoframe">
+                        <img src="/images/spinBoard/step-02.png" />
+                        <h4>02 Spin & Play</h4>
+                        <p>Enter code to spin</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="infoframe">
+                        <img src="/images/spinBoard/step-03.png" />
+                        <h4>03 Get Reward</h4>
+                        <p>Claim reward from CS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-muted">
+        <div class="socials mx-auto">
+            <a href="https://wa.me/601120630173/" target="_blank" class="socialbtn" data-toggle="tooltip" data-original-title="+60 11 206 30173">
+                <img src="/images/spinBoard/social-wa.svg" />
+            </a>
+        </div>
+        <div class="text-center">
+            Copyrights &copy; 2024. All Rights Reserved.
+        </div>
+    </footer>
+
+    <div id="bgBlur" class="background-blur hide"></div>
+
+    <div id="prize" class="wrapper animate__animated animate__bounceIn hide">
+        <a href="#" id="closeprize"></a>
+
+        <div class="reward-container">
+            <h2 id="usercode"></h2>
+            <br/>
+            <h3>You have Won</h3>
+            <h2 id="reward-title"></h2>
+            <img src="/images/spinBoard/gift.png" class="imgreward animate__animated animate__tada animate__infinite" />
+            <p class="prizenote"><b>Note: Please screenshot this screen and Whatsapp to us</b></p>
+            <img src="/images/spinBoard//reward-btn.png" id="rewardbutton" class="imgclaim animate__animated animate__pulse animate__infinite" />
+        </div>
+    </div>
+
+    <!-- code Modal -->
+    <div class="modal fade" id="modalone" tabindex="-1" role="dialog" aria-labelledby="modalcode" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead">Enter code to play & win</p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inputcode" placeholder="Enter code..." maxlength="30">
+                    </div>
+                    <p class="error-message mt-1"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-block" id="playbutton">Play Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // Serialize the model data to JSON and assign it to a JavaScript variable
+    var modelData = [{"rewarD_ID":"45","rewarD_TITLE":"FREE CREDIT RM38","reC_TYPE":"1","probability":null},{"rewarD_ID":"46","rewarD_TITLE":"FREE CREDIT RM28","reC_TYPE":"1","probability":null},{"rewarD_ID":"47","rewarD_TITLE":"FREE CREDIT RM58","reC_TYPE":"1","probability":null},{"rewarD_ID":"48","rewarD_TITLE":"FREE CREDIT RM68","reC_TYPE":"1","probability":null},{"rewarD_ID":"49","rewarD_TITLE":"FREE CREDIT RM128","reC_TYPE":"1","probability":null},{"rewarD_ID":"50","rewarD_TITLE":"FREE CREDIT RM18","reC_TYPE":"1","probability":null},{"rewarD_ID":"51","rewarD_TITLE":"ANGPAU RM 888","reC_TYPE":"1","probability":null},{"rewarD_ID":"52","rewarD_TITLE":"TOPUP BONUS 20%","reC_TYPE":"1","probability":null}];
+
+    $('.flexbkg').css('background-image', 'url("https://www.kuat-cuci.com/images/spinboard/background.jpg")');
+    $('.cover-container').css('background-image', 'url("https://www.kuat-cuci.com/images/spinboard/stage.png")');
+</script>
+
+
+
+    <!-- Javascript -->
+    <script src="/bundles/libscripts.bundle.js"></script>
+    <script src="/bundles/vendorscripts.bundle.js"></script>
+
+    <script src="/bundles/mainscripts.bundle.js"></script>
+
+
+    <!-- Spin Board JS -->
+    <script src="/js/spinBoard/popper.min.js"></script>
+    
+    <script src="/js/spinBoard/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+</body>
+</html>
