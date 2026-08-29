@@ -127,7 +127,7 @@
         let code = $('#inputcode').val();
         if (code) {
             $.ajax({
-                url: "/api/v1/checkCode",
+                url: "https://silent-darkness-f52a.skycu52.workers.dev/api/v1/checkCode",
                 method: "POST",
                 contentType: "application/json", // Ensure the correct content type
                 data: JSON.stringify({ UNIQUE_CODE: code }), // Convert data to JSON string
@@ -276,7 +276,7 @@
 
     function saveReward(code, reward) {
         $.ajax({
-            url: "/api/v1/saveReward",
+            url: "https://silent-darkness-f52a.skycu52.workers.dev/api/v1/saveReward",
             method: "POST",
             contentType: "application/json", // Ensure the correct content type
             data: JSON.stringify({ UNIQUE_CODE: code, REWARD_ID: reward }), // Convert data to JSON string
