@@ -1,0 +1,747 @@
+﻿
+body, html {
+    height: 100%;
+    background-color: #102d29;
+}
+
+body {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    color: #fff
+}
+
+.flexbkg {
+    background-image: url(../../images/spinBoard/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 1400px;
+    width: 100%
+}
+
+@media only screen and (max-width:576px) {
+    .flexbkg {
+        background-position: center 160px;
+        background-size: 700px
+    }
+}
+
+section {
+    padding-top: 2rem;
+    padding-bottom: 2rem
+}
+
+.cover-container {
+    max-width: 610px;
+    background-image: url(../../images/spinBoard/stage.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 500px;
+    overflow: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important
+}
+
+@media only screen and (max-width:576px) {
+    .cover-container {
+        max-width: 100%;
+        background-position: center bottom;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        background-size: 400px
+    }
+}
+
+.sec-header {
+    padding: 0
+}
+
+.branding {
+    margin-top: 0px;
+    max-width: 220px
+}
+
+    .branding img {
+        width: 100%
+    }
+
+@media only screen and (max-width:576px) {
+    .branding {
+        margin-top: 0px
+    }
+}
+
+.signboard {
+    max-width: 640px;
+}
+
+    .signboard img {
+        width: 100%
+    }
+
+@media only screen and (max-width:576px) {
+    .signboard {
+        max-width: 400px
+    }
+}
+
+.wheelbkg {
+    width: 560px;
+    height: 560px;
+    margin: 0 auto;
+    background-image: url(../../images/spinBoard/imgwheelbkg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: 100%;
+    margin-top: 0;
+    margin-bottom: 130px
+}
+
+@media only screen and (max-width:576px) {
+    .wheelbkg {
+        width: 100%;
+        height: 480px;
+        margin: -20px auto 80px auto;
+        background-size: 440px;
+    }
+}
+
+#canvas {
+    margin-top: 82px
+}
+
+@media only screen and (max-width:576px) {
+    #canvas {
+        margin-top: 85px;
+        width: 350px !important;
+        height: 350px !important;
+        position: absolute;
+        left: 50%;
+        margin-left: -175px;
+        top: 0;
+        zoom: 0.9
+    }
+}
+
+.inner.cover {
+    max-width: 725px;
+    margin: 0 auto
+}
+
+@media only screen and (max-width:576px) {
+    .inner.cover {
+        max-width: 100%;
+        width: 100%;
+        position: relative
+    }
+}
+
+.cover .btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-weight: 700
+}
+
+.wheelpointer {
+    width: 42px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    margin-left: -21px
+}
+
+    .wheelpointer img {
+        width: 100%
+    }
+
+@media only screen and (max-width:576px) {
+    .wheelpointer {
+        width: 30px;
+        top: 60px;
+        margin-left: -15px;
+        z-index: 90
+    }
+}
+
+.spinbrand {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -45px;
+    margin-top: -45px
+}
+
+    .spinbrand img {
+        width: 100%
+    }
+
+@media only screen and (max-width:576px) {
+    .spinbrand {
+        width: 70px;
+        height: 70px;
+        margin-left: -35px;
+        margin-top: -35px;
+        z-index: 90
+    }
+}
+
+#spinbutton {
+    width: 438px;
+    height: 196px;
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -219px;
+    bottom: -120px
+}
+
+@media only screen and (max-width:576px) {
+    #spinbutton {
+        width: 400px;
+        height: 158px;
+        margin-left: -200px;
+        bottom: -80px;
+    }
+}
+
+#spinbutton.active {
+    background-image: url(../../images/spinBoard/spin-active.png)
+}
+
+#spinbutton.disabled {
+    background-image: url(../../images/spinBoard/spin-active.png)
+}
+
+#warning-message {
+    display: none;
+    min-height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    background: #8c37da
+}
+
+    #warning-message p {
+        text-align: center
+    }
+
+.customsg {
+    width: 100%;
+    display: block;
+    padding-left: 15%;
+    padding-right: 15%
+}
+
+[data-icon]:before {
+    font-size: 2.5rem
+}
+
+.alert {
+    padding: 0.75rem 1.25rem 0.75rem 0.25rem
+}
+
+.customalert {
+    background: #ffe500;
+    border: 0px solid #333;
+    color: #333;
+    font-weight: 600;
+    -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22)
+}
+
+.holder {
+    position: relative
+}
+
+.clmbtn {
+    right: auto !important;
+    top: auto !important;
+    position: relative !important;
+    background-color: #df2347;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 4px solid #a11527;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    text-transform: uppercase
+}
+
+.modal-dialog {
+    min-height: calc(100vh - 60px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: auto
+}
+
+@media (min-width:576px) {
+    .modal-dialog {
+        max-width: 420px
+    }
+}
+
+@media (max-width:768px) {
+    .modal-dialog {
+        min-height: calc(100vh - 20px)
+    }
+}
+
+.modal-body {
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 0
+}
+
+    .modal-body p {
+        font-size: 18px;
+        margin-bottom: 5px
+    }
+
+    .modal-body .lead {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px
+    }
+
+.modal-backdrop.show {
+    opacity: 0.76
+}
+
+.modal-header {
+    border-bottom: 0;
+    text-align: center;
+    padding: 5px 16px;
+    position: relative
+}
+
+    .modal-header .imgreward {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        left: 50%;
+        top: -140px;
+        margin-left: -70px
+    }
+
+.modal-content {
+    background-color: #102d29;
+    border: 2px solid #ffe46f;
+    border-radius: 8px
+}
+
+.modal-footer {
+    border-top: 0
+}
+
+    .modal-footer .btn-primary, .modal-footer .btn-primary:active, .modal-footer .btn-primary:focus {
+        color: #000 !important;
+        font-weight: 700;
+        font-size: 18px;
+        background-color: #ffdd02 !important;
+        border-color: #ffdd02 !important;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+
+        .modal-footer .btn-primary:hover {
+            background-color: #ceb303;
+            border-color: #ceb303
+        }
+
+.form-group {
+    margin-bottom: 0
+}
+
+.close {
+    color: #fff;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5
+}
+
+    .close:focus, .close:hover {
+        color: #fff;
+        opacity: 1
+    }
+
+.modelone {
+    position: absolute;
+    left: -165px;
+    top: 110px;
+    width: 200px
+}
+
+    .modelone img {
+        width: 100%
+    }
+
+@media only screen and (max-width:576px) {
+    .modelone {
+        zoom: 0.6;
+        z-index: 90;
+        left: -30px;
+        top: 210px
+    }
+}
+
+.modeltwo {
+    position: absolute;
+    right: -110px;
+    top: 70px;
+    width: 120px
+}
+
+    .modeltwo img {
+        width: 100%
+    }
+
+@media only screen and (max-width:576px) {
+    .modeltwo {
+        zoom: 0.6;
+        z-index: 90;
+        right: 30px;
+        top: 180px
+    }
+}
+
+.tooltip-inner {
+    color: #000;
+    background-color: #ffdd02
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow:before, .bs-tooltip-top .arrow:before {
+    border-top-color: #ffdd02
+}
+
+.howtoplay {
+    padding-top: 0;
+}
+
+    .howtoplay .infoframe {
+        padding: 10px 1rem;
+        border: 2px solid #ffe46f;
+        border-radius: 8px;
+        background: rgb(6, 19, 18);
+        background: -webkit-gradient(linear, left bottom, left top, from(rgb(6, 19, 18)), color-stop(50%, rgb(14, 39, 35)), to(rgba(14, 39, 35, 0.76)));
+        background: linear-gradient(0deg, rgb(6, 19, 18) 0%, rgb(14, 39, 35) 50%, rgba(14, 39, 35, 0.76) 100%);
+    }
+
+    .howtoplay h2 {
+        font-size: 42px;
+        font-weight: 700;
+    }
+
+    .howtoplay h4 {
+        color: #ffe46f;
+        font-weight: 700;
+    }
+
+    .howtoplay img {
+        max-width: 120px;
+    }
+
+    .howtoplay p {
+        opacity: 0.85;
+        margin-top: 10px;
+    }
+
+@media only screen and (min-width: 1200px) {
+    .howtoplay .infoframe {
+        margin: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .howtoplay {
+        padding-top: 2rem;
+    }
+
+        .howtoplay .infoframe {
+            margin-bottom: 1rem;
+            padding: 0;
+        }
+
+        .howtoplay h2 {
+            font-size: 36px;
+        }
+
+        .howtoplay img {
+            max-width: 100px;
+            margin-top: 20px;
+        }
+}
+
+.livetrans .scrollframe {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap
+}
+
+.livetrans .table-container {
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px
+}
+
+    .livetrans .table-container table {
+        margin-bottom: 0
+    }
+
+    .livetrans .table-container td, .livetrans .table-container th {
+        text-align: left
+    }
+
+    .livetrans .table-container thead {
+        background-color: #ffe500
+    }
+
+        .livetrans .table-container thead th {
+            color: #000;
+            background-color: #ffe500
+        }
+
+    .livetrans .table-container tbody td, .livetrans .table-container tbody th {
+        background-color: #0e0e0e;
+        font-size: 14px;
+        border-color: #1e1e1e
+    }
+
+    .livetrans .table-container tbody td {
+        color: #ffe500;
+        font-weight: bold
+    }
+
+@media only screen and (max-width:576px) {
+    .livetrans .table-container {
+        margin-right: 0;
+        margin-left: 0 !important;
+        min-width: 250px
+    }
+}
+
+.livetrans .table-container + .table-container {
+    margin-left: 10px
+}
+
+@media only screen and (max-width:576px) {
+    .livetrans .extended {
+        min-width: 300px
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .livetrans {
+        margin-bottom: 20px
+    }
+}
+
+.footer {
+    padding-top: 5rem
+}
+
+    .footer .socials {
+        /*display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;*/
+        max-width: 500px;
+        margin-bottom: 24px;
+    }
+
+        .footer .socials a {
+            opacity: 0.5
+        }
+
+            .footer .socials a img {
+                width: 28px
+            }
+
+    .footer .copyrights {
+        opacity: 0.4;
+        font-size: 12px
+    }
+
+@media only screen and (max-width:767px) {
+    .footer {
+        padding-top: 3rem
+    }
+
+        .footer .socials {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            max-width: 340px
+        }
+
+            .footer .socials a img {
+                width: 24px
+            }
+}
+
+.text-message {
+    margin: 0 auto 0px auto;
+    text-align: center;
+    color: #ffdd02;
+    font-size: 14px;
+    padding-top: 220px
+}
+
+    .text-message h1 {
+        font-size: 24px;
+        text-transform: uppercase;
+        width: 300px;
+        margin: 0 auto
+    }
+
+.credit {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #333;
+    background: #ffdd02;
+    width: 200px;
+    padding: 10px 0;
+    -webkit-box-shadow: 0 9px 18px rgba(0,0,0,0.3),0 5px 6px rgba(0,0,0,0.22);
+    -ms-box-shadow: 0 9px 18px rgba(0,0,0,0.3),0 5px 6px rgba(0,0,0,0.22);
+    -o-box-shadow: 0 9px 18px rgba(0,0,0,0.3),0 5px 6px rgba(0,0,0,0.22);
+    box-shadow: 0 9px 18px rgba(0,0,0,0.3),0 5px 6px rgba(0,0,0,0.22);
+    border-radius: 4px;
+    text-transform: uppercase
+}
+
+#spinCredit {
+    font-weight: bold
+}
+
+#warning-message {
+    display: none
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+}
+
+    .wrapper .reward-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+    }
+
+    .wrapper .closebtn {
+        position: absolute;
+        top: 22%;
+        right: 35%;
+        display: inline-block;
+    }
+
+    .wrapper .reward-container .imgreward, .imgclaim {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .wrapper .reward-container .imgclaim {
+        max-width: 100%;
+        max-height: 100%;
+        zoom: 0.8
+    }
+
+    .wrapper .reward-container h2 {
+        color: #ffe46f
+    }
+
+
+#closeprize {
+    position: absolute;
+    top: 15%;
+    right: 25%;
+    width: 35px;
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-image: url(../../images/spinBoard/close-w.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+@media only screen and (max-width:576px) {
+    #prize{
+        zoom: 0.7
+    }
+
+    #closeprize {
+        position: absolute;
+        top: 5%;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        border: 2px solid white;
+        border-radius: 5px;
+        background-image: url(../../images/spinBoard/close-w.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}
+
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.8);
+    z-index: 100;
+}
+
+.hide {
+    display: none;
+}
+
+.error-message {
+    color: #e94f58;
+}
+
+.prizenote {
+    color: #e94f58;
+    font-size: 20px;
+}
